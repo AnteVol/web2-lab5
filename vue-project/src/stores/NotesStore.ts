@@ -18,9 +18,9 @@ export const useNotesStore = defineStore('notes', {
       this.loading = true;
       try {
         const query = new Parse.Query('Note');
-        const results = await query.findAll();
+        const results: Parse.Object[] = await query.find(); 
         this.notes = results
-        .map(note => ({
+          .map((note: Parse.Object) => ({
           object_id: note.id,
           title: note.get('title'),
           content: note.get('content'),

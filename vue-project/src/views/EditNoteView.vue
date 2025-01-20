@@ -44,7 +44,7 @@
   import { defineComponent, ref, onMounted } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
   import { useNotesStore } from '@/stores/NotesStore'
-  import { Note } from '@/interfaces/Note';
+  import type { Note } from '@/interfaces/Note';
   
   export default defineComponent({
     setup() {
