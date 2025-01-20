@@ -26,7 +26,7 @@ export const useNotesStore = defineStore('notes', {
           content: note.get('content'),
           createdAt: note.get('createdAt').toISOString()
         } as Note))
-        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        .sort((a: Note, b: Note) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
       
       } catch (error) {
         console.error('Error fetching notes:', error);
